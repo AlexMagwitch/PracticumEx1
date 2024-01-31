@@ -11,9 +11,11 @@
 Для создания репозитория используем 
 
 '''bash
+
 mkdir 'название'
 git init
 git add .
 git commit -m 'Сообщение'
-git -u origin push
+git remote add origin ssh-key
+git push -u origin main
 '''
