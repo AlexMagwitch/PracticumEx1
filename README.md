@@ -19,3 +19,14 @@ git commit -m 'Сообщение'
 git remote add origin ssh-key
 git push -u origin main
 ```
+---
+
+```mermaid
+graph LR;
+  untracked -- "git add" --> staged;
+  staged    -- "???"     --> tracked/comitted;
+
+%% стрелка без текста для примера: 
+  A --> B;
+```
+
