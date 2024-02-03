@@ -34,10 +34,10 @@ untracked (Untracked files);
 graph LR;
   
   untracked -- "git add" --> staged(+tracked);
-  staged(+tracked) -- "git commit" --> tracked;
-  staged(+tracked) -- "изминения" --> modified;
-  tracked -- "изминения" --> modified;
   modified -- "git add" --> staged(+tracked);
+  staged(+tracked) -- "изминения" --> modified;
+  staged(+tracked) -- "git commit" --> tracked;
+  tracked -- "изминения" --> modified;
 
 ```
 
