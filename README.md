@@ -21,12 +21,23 @@ git push -u origin main
 ```
 ---
 
+**Хеш - это информация о коммите**
+
+Файл **HEAD** (англ. «голова», «головной») — один из служебных файлов папки .git. Он указывает на коммит, который сделан последним (то есть на самый новый).
+
+**git status** показывает только следующие состояния файлов:
+staged (Changes to be committed в выводе git status);
+modified (Changes not staged for commit);
+untracked (Untracked files);
+
 ```mermaid
 graph LR;
-  untracked -- "git add" --> staged;
-  staged    -- "???"     --> tracked/comitted;
+  
+  untracked -- "git add" --> staged(+tracked);
+  staged(+tracked) -- "git commit" --> tracked;
+  staged(+tracked) -- "изминения" --> modified;
+  tracked -- "изминения" --> modified;
+  modified -- "git add" --> staged(+tracked);
 
-%% стрелка без текста для примера: 
-  A --> B;
 ```
 
